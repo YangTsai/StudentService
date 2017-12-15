@@ -53,7 +53,7 @@ public class UserController {
 	/**
 	 * 获取用户信息
 	 * 
-	 * @parami
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value = "/getUser", method = RequestMethod.GET)
