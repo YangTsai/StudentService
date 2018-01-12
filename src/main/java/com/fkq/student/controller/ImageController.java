@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.fkq.student.pojo.JsonResult;
 import com.fkq.student.util.FileUtil;
@@ -19,12 +20,12 @@ import com.fkq.student.util.FileUtil;
  * @date 2017年12月4日
  */
 
-@Controller
+@RestController
 @RequestMapping("/images")
 public class ImageController {
 
 	@RequestMapping(value = "/getBanner", method = RequestMethod.GET)
-	public @ResponseBody JsonResult getBanner(HttpServletRequest request, Model model) {
+	public JsonResult getBanner(HttpServletRequest request, Model model) {
 		JsonResult baseModel = new JsonResult();
 		List<String>  pathList = FileUtil.getBannerImages();
 		if(pathList !=null && pathList.size()>0) {
